@@ -1,10 +1,3 @@
-//
-//  PanGalacticMealLoggerUITests.swift
-//  PanGalacticMealLoggerUITests
-//
-//  Created by Tobias Ritzau on 2023-09-28.
-//
-
 import XCTest
 
 final class PanGalacticMealLoggerUITests: XCTestCase {
