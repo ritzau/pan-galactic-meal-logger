@@ -1,0 +1,593 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */; };
+		F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4532AC4E253004F0431 /* ContentView.swift */; };
+		F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4552AC4E256004F0431 /* Assets.xcassets */; };
+		F88EE4592AC4E256004F0431 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4582AC4E256004F0431 /* Preview Assets.xcassets */; };
+		F88EE4632AC4E256004F0431 /* PanGalacticMealLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4622AC4E256004F0431 /* PanGalacticMealLoggerTests.swift */; };
+		F88EE46D2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE46C2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift */; };
+		F88EE46F2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F88EE45F2AC4E256004F0431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F88EE4462AC4E252004F0431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F88EE44D2AC4E252004F0431;
+			remoteInfo = PanGalacticMealLogger;
+		};
+		F88EE4692AC4E256004F0431 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F88EE4462AC4E252004F0431 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F88EE44D2AC4E252004F0431;
+			remoteInfo = PanGalacticMealLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanGalacticMealLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerApp.swift; sourceTree = "<group>"; };
+		F88EE4532AC4E253004F0431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F88EE4552AC4E256004F0431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F88EE4582AC4E256004F0431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F88EE45E2AC4E256004F0431 /* PanGalacticMealLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGalacticMealLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88EE4622AC4E256004F0431 /* PanGalacticMealLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerTests.swift; sourceTree = "<group>"; };
+		F88EE4682AC4E256004F0431 /* PanGalacticMealLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGalacticMealLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F88EE46C2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerUITests.swift; sourceTree = "<group>"; };
+		F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F88EE44B2AC4E252004F0431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE45B2AC4E256004F0431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE4652AC4E256004F0431 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F88EE4452AC4E252004F0431 = {
+			isa = PBXGroup;
+			children = (
+				F88EE4502AC4E253004F0431 /* PanGalacticMealLogger */,
+				F88EE4612AC4E256004F0431 /* PanGalacticMealLoggerTests */,
+				F88EE46B2AC4E256004F0431 /* PanGalacticMealLoggerUITests */,
+				F88EE44F2AC4E253004F0431 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F88EE44F2AC4E253004F0431 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */,
+				F88EE45E2AC4E256004F0431 /* PanGalacticMealLoggerTests.xctest */,
+				F88EE4682AC4E256004F0431 /* PanGalacticMealLoggerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F88EE4502AC4E253004F0431 /* PanGalacticMealLogger */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */,
+				F88EE4532AC4E253004F0431 /* ContentView.swift */,
+				F88EE4552AC4E256004F0431 /* Assets.xcassets */,
+				F88EE4572AC4E256004F0431 /* Preview Content */,
+			);
+			path = PanGalacticMealLogger;
+			sourceTree = "<group>";
+		};
+		F88EE4572AC4E256004F0431 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE4582AC4E256004F0431 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F88EE4612AC4E256004F0431 /* PanGalacticMealLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE4622AC4E256004F0431 /* PanGalacticMealLoggerTests.swift */,
+			);
+			path = PanGalacticMealLoggerTests;
+			sourceTree = "<group>";
+		};
+		F88EE46B2AC4E256004F0431 /* PanGalacticMealLoggerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE46C2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift */,
+				F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */,
+			);
+			path = PanGalacticMealLoggerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F88EE44D2AC4E252004F0431 /* PanGalacticMealLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F88EE4722AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLogger" */;
+			buildPhases = (
+				F88EE44A2AC4E252004F0431 /* Sources */,
+				F88EE44B2AC4E252004F0431 /* Frameworks */,
+				F88EE44C2AC4E252004F0431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PanGalacticMealLogger;
+			productName = PanGalacticMealLogger;
+			productReference = F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F88EE45D2AC4E256004F0431 /* PanGalacticMealLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F88EE4752AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLoggerTests" */;
+			buildPhases = (
+				F88EE45A2AC4E256004F0431 /* Sources */,
+				F88EE45B2AC4E256004F0431 /* Frameworks */,
+				F88EE45C2AC4E256004F0431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F88EE4602AC4E256004F0431 /* PBXTargetDependency */,
+			);
+			name = PanGalacticMealLoggerTests;
+			productName = PanGalacticMealLoggerTests;
+			productReference = F88EE45E2AC4E256004F0431 /* PanGalacticMealLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F88EE4672AC4E256004F0431 /* PanGalacticMealLoggerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F88EE4782AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLoggerUITests" */;
+			buildPhases = (
+				F88EE4642AC4E256004F0431 /* Sources */,
+				F88EE4652AC4E256004F0431 /* Frameworks */,
+				F88EE4662AC4E256004F0431 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F88EE46A2AC4E256004F0431 /* PBXTargetDependency */,
+			);
+			name = PanGalacticMealLoggerUITests;
+			productName = PanGalacticMealLoggerUITests;
+			productReference = F88EE4682AC4E256004F0431 /* PanGalacticMealLoggerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F88EE4462AC4E252004F0431 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					F88EE44D2AC4E252004F0431 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					F88EE45D2AC4E256004F0431 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F88EE44D2AC4E252004F0431;
+					};
+					F88EE4672AC4E256004F0431 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = F88EE44D2AC4E252004F0431;
+					};
+				};
+			};
+			buildConfigurationList = F88EE4492AC4E252004F0431 /* Build configuration list for PBXProject "PanGalacticMealLogger" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F88EE4452AC4E252004F0431;
+			productRefGroup = F88EE44F2AC4E253004F0431 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F88EE44D2AC4E252004F0431 /* PanGalacticMealLogger */,
+				F88EE45D2AC4E256004F0431 /* PanGalacticMealLoggerTests */,
+				F88EE4672AC4E256004F0431 /* PanGalacticMealLoggerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F88EE44C2AC4E252004F0431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88EE4592AC4E256004F0431 /* Preview Assets.xcassets in Resources */,
+				F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE45C2AC4E256004F0431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE4662AC4E256004F0431 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F88EE44A2AC4E252004F0431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */,
+				F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE45A2AC4E256004F0431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88EE4632AC4E256004F0431 /* PanGalacticMealLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F88EE4642AC4E256004F0431 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F88EE46D2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift in Sources */,
+				F88EE46F2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F88EE4602AC4E256004F0431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F88EE44D2AC4E252004F0431 /* PanGalacticMealLogger */;
+			targetProxy = F88EE45F2AC4E256004F0431 /* PBXContainerItemProxy */;
+		};
+		F88EE46A2AC4E256004F0431 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F88EE44D2AC4E252004F0431 /* PanGalacticMealLogger */;
+			targetProxy = F88EE4692AC4E256004F0431 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F88EE4702AC4E256004F0431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F88EE4712AC4E256004F0431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F88EE4732AC4E256004F0431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PanGalacticMealLogger/Preview Content\"";
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F88EE4742AC4E256004F0431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PanGalacticMealLogger/Preview Content\"";
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLogger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F88EE4762AC4E256004F0431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanGalacticMealLogger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PanGalacticMealLogger";
+			};
+			name = Debug;
+		};
+		F88EE4772AC4E256004F0431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PanGalacticMealLogger.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PanGalacticMealLogger";
+			};
+			name = Release;
+		};
+		F88EE4792AC4E256004F0431 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PanGalacticMealLogger;
+			};
+			name = Debug;
+		};
+		F88EE47A2AC4E256004F0431 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = K8U8Y27623;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PanGalacticMealLogger;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F88EE4492AC4E252004F0431 /* Build configuration list for PBXProject "PanGalacticMealLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88EE4702AC4E256004F0431 /* Debug */,
+				F88EE4712AC4E256004F0431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F88EE4722AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88EE4732AC4E256004F0431 /* Debug */,
+				F88EE4742AC4E256004F0431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F88EE4752AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88EE4762AC4E256004F0431 /* Debug */,
+				F88EE4772AC4E256004F0431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F88EE4782AC4E256004F0431 /* Build configuration list for PBXNativeTarget "PanGalacticMealLoggerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F88EE4792AC4E256004F0431 /* Debug */,
+				F88EE47A2AC4E256004F0431 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F88EE4462AC4E252004F0431 /* Project object */;
+}
