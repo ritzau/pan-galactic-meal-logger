@@ -129,7 +129,7 @@ class ProductData: NSObject, XMLParserDelegate, ObservableObject {
 
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         let data = string.trimmingCharacters(in: .whitespacesAndNewlines)
-        
+
         if !data.isEmpty {
             switch currentElement {
             case "Namn":
