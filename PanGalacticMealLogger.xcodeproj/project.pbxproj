@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F84EF6692AC6202900E200B9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84EF6682AC6202900E200B9 /* Config.swift */; };
 		F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */; };
 		F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4532AC4E253004F0431 /* ContentView.swift */; };
 		F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4552AC4E256004F0431 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 		F88EE46F2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */; };
 		F88EE47C2AC4E739004F0431 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47B2AC4E739004F0431 /* Product.swift */; };
 		F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47D2AC4E7AD004F0431 /* ProductView.swift */; };
+		F8B0F5762AC589A00053F4A2 /* livsmedel.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B0F5752AC589A00053F4A2 /* livsmedel.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F84EF6682AC6202900E200B9 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanGalacticMealLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerApp.swift; sourceTree = "<group>"; };
 		F88EE4532AC4E253004F0431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F88EE47B2AC4E739004F0431 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F88EE47D2AC4E7AD004F0431 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
+		F8B0F5752AC589A00053F4A2 /* livsmedel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livsmedel.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F84EF66A2AC6209C00E200B9 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				F88EE4532AC4E253004F0431 /* ContentView.swift */,
+				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
 		F88EE4452AC4E252004F0431 = {
 			isa = PBXGroup;
 			children = (
@@ -98,12 +111,13 @@
 		F88EE4502AC4E253004F0431 /* PanGalacticMealLogger */ = {
 			isa = PBXGroup;
 			children = (
+				F84EF66A2AC6209C00E200B9 /* ui */,
 				F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */,
-				F88EE4532AC4E253004F0431 /* ContentView.swift */,
-				F88EE4552AC4E256004F0431 /* Assets.xcassets */,
-				F88EE4572AC4E256004F0431 /* Preview Content */,
+				F84EF6682AC6202900E200B9 /* Config.swift */,
 				F88EE47B2AC4E739004F0431 /* Product.swift */,
-				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
+				F88EE4552AC4E256004F0431 /* Assets.xcassets */,
+				F8B0F5752AC589A00053F4A2 /* livsmedel.xml */,
+				F88EE4572AC4E256004F0431 /* Preview Content */,
 			);
 			path = PanGalacticMealLogger;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88EE4592AC4E256004F0431 /* Preview Assets.xcassets in Resources */,
+				F8B0F5762AC589A00053F4A2 /* livsmedel.xml in Resources */,
 				F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +280,7 @@
 			files = (
 				F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */,
 				F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */,
+				F84EF6692AC6202900E200B9 /* Config.swift in Sources */,
 				F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */,
 				F88EE47C2AC4E739004F0431 /* Product.swift in Sources */,
 			);
@@ -427,10 +443,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PanGalacticMealLogger/Preview Content\"";
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -445,6 +462,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -456,10 +474,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PanGalacticMealLogger/Preview Content\"";
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -474,6 +493,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLogger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -487,7 +507,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -507,7 +527,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -526,7 +546,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerUITests;
@@ -544,7 +564,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = K8U8Y27623;
+				DEVELOPMENT_TEAM = DLB59H2B97;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.ritzau.PanGalacticMealLoggerUITests;

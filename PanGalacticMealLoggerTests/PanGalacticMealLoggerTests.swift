@@ -1,4 +1,5 @@
 import XCTest
+
 @testable import PanGalacticMealLogger
 
 final class PanGalacticMealLoggerTests: XCTestCase {
