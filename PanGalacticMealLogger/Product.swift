@@ -54,6 +54,10 @@ let chickenBreast = Product(
 
 class ProductData: NSObject, XMLParserDelegate, ObservableObject {
     @Published var products: [Product] = []
+    @Published var isLoading: Bool = false
+    @Published var progress: Double = 0.0
+
+    var tmpProducts: [Product] = []
 
     let formatter = NumberFormatter()
 
@@ -184,6 +188,8 @@ class ProductData: NSObject, XMLParserDelegate, ObservableObject {
             }
             inNutrition = false
         case "Livsmedel":
+            inProduct = false
+
             let product = Product(
                 barcode: barcode,
                 name: name,
@@ -197,19 +203,32 @@ class ProductData: NSObject, XMLParserDelegate, ObservableObject {
                 salt: salt
             )
 
-            let count = DispatchQueue.main.asyncAndWait {
-                self.products.append(product)
-                return self.products.count
-            }
+            tmpProducts.append(product)
 
-            inProduct = false
+            if tmpProducts.count > 100 {
+                DispatchQueue.main.async {
+                    self.isLoading = true
+                    self.products.append(contentsOf: self.tmpProducts)
+                    self.tmpProducts.removeAll(keepingCapacity: true)
+                    self.progress = Double(self.products.count)
+                }
 
-            if isPreview && count > 20 {
-                parser.abortParsing()
+                if isPreview {
+                    parser.abortParsing()
+                }
             }
 
         default:
             break
+        }
+    }
+
+    func parserDidEndDocument(_ parser: XMLParser) {
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.progress = 1
+            self.products.append(contentsOf: self.tmpProducts)
+            self.tmpProducts.removeAll(keepingCapacity: false)
         }
     }
 }

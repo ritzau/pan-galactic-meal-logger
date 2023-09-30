@@ -15,23 +15,30 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                TextField("Search", text: $searchText)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding([.leading, .trailing], 8)
+            VStack {
+                if productData.isLoading {
+                    ProgressView(value: productData.progress, total: 2500)
+                        .progressViewStyle(.linear)
+                        .padding()
+                }
 
-                ForEach(filteredProducts, id: \.name) { product in
-                    NavigationLink(destination: ProductView(product: product)) {
-                        Text(product.name)
+                List {
+                    ForEach(filteredProducts, id: \.name) { product in
+                        NavigationLink(destination: ProductView(product: product)) {
+                            Text(product.name)
+                        }
                     }
                 }
+                .searchable(text: $searchText)
+                .navigationTitle("Products")
             }
-            .navigationTitle("Products")
         }
         .onAppear {
             // URL(string: "http://www7.slv.se/apilivsmedel/LivsmedelService.svc/Livsmedel/Naringsvarde/20230613") {
             if let url = Bundle.main.url(forResource: "livsmedel", withExtension: "xml") {
-                productData.parseAsync(url)
+                Task {
+                    await productData.parseAsync(url)
+                }
             } else {
                 print("Cannot locate DB file")
             }
