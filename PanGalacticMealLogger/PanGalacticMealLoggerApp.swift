@@ -4,7 +4,7 @@ import SwiftUI
 struct PanGalacticMealLoggerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DailyLogView()
         }
     }
 }

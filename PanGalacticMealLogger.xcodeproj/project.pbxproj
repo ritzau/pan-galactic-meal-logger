@@ -18,6 +18,7 @@
 		F88EE47C2AC4E739004F0431 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47B2AC4E739004F0431 /* Product.swift */; };
 		F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47D2AC4E7AD004F0431 /* ProductView.swift */; };
 		F8B0F5762AC589A00053F4A2 /* livsmedel.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B0F5752AC589A00053F4A2 /* livsmedel.xml */; };
+		F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A812AC84F72002551BB /* DailyLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		F88EE47B2AC4E739004F0431 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		F88EE47D2AC4E7AD004F0431 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		F8B0F5752AC589A00053F4A2 /* livsmedel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livsmedel.xml; sourceTree = "<group>"; };
+		F8C63A812AC84F72002551BB /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				F88EE4532AC4E253004F0431 /* ContentView.swift */,
 				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
+				F8C63A812AC84F72002551BB /* DailyLogView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */,
 				F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */,
 				F84EF6692AC6202900E200B9 /* Config.swift in Sources */,
+				F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */,
 				F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */,
 				F88EE47C2AC4E739004F0431 /* Product.swift in Sources */,
 			);

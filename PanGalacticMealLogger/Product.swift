@@ -140,7 +140,7 @@ class ProductData: NSObject, XMLParserDelegate, ObservableObject {
                 if inNutrition {
                     nutritionName = data
                 } else if inProduct {
-                    name += data
+                    name = name + data
                 }
             case "Forkortning":
                 nutritionAbbreviation = data
@@ -213,9 +213,9 @@ class ProductData: NSObject, XMLParserDelegate, ObservableObject {
                     self.progress = Double(self.products.count)
                 }
 
-                if isPreview {
-                    parser.abortParsing()
-                }
+//                if isPreview {
+//                    parser.abortParsing()
+//                }
             }
 
         default:

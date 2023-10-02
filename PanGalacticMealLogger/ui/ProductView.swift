@@ -45,13 +45,10 @@ struct ProductListView: View {
     let products: [Product]
 
     var body: some View {
-        NavigationView {
-            List(products, id: \.barcode) { product in
-                NavigationLink(destination: ProductView(product: product)) {
-                    Text(product.name)
-                }
+        List(products, id: \.barcode) { product in
+            NavigationLink(destination: ProductView(product: product)) {
+                Text(product.name)
             }
-            .navigationTitle("Products")
         }
     }
 }
