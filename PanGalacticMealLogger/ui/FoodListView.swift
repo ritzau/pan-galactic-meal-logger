@@ -1,16 +1,13 @@
 import Foundation
 import SwiftUI
 
-struct ContentView: View {
+struct FoodListView: View {
 
-    @ObservedObject private var productData: FoodStore
-
-    @State private var searchText: String
-
-    init(productData: FoodStore = FoodStore(), searchText: String = "") {
-        self.productData = productData
-        self.searchText = searchText
-    }
+    @ObservedObject var productData: FoodStore
+    @State var searchText: String = ""
+    
+    let meal: String
+    let addToMeal: (Product) -> Void
 
     var filteredProducts: [Product] {
         productData.products.filter { product in
@@ -28,7 +25,7 @@ struct ContentView: View {
 
             List {
                 ForEach(filteredProducts, id: \.name) { product in
-                    NavigationLink(destination: ProductView(product: product)) {
+                    NavigationLink(destination: ProductView(product: product, meal: meal, addToMeal: { p in addToMeal(p) })) {
                         Text(product.name)
                     }
                 }
@@ -40,5 +37,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    FoodListView(productData: FoodStore(), meal: "Foo") {_ in}
 }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		F84EF6692AC6202900E200B9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84EF6682AC6202900E200B9 /* Config.swift */; };
 		F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */; };
-		F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4532AC4E253004F0431 /* ContentView.swift */; };
+		F88EE4542AC4E253004F0431 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4532AC4E253004F0431 /* FoodListView.swift */; };
 		F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4552AC4E256004F0431 /* Assets.xcassets */; };
 		F88EE4592AC4E256004F0431 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4582AC4E256004F0431 /* Preview Assets.xcassets */; };
 		F88EE4632AC4E256004F0431 /* PanGalacticMealLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4622AC4E256004F0431 /* PanGalacticMealLoggerTests.swift */; };
@@ -46,7 +46,7 @@
 		F84EF6682AC6202900E200B9 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanGalacticMealLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerApp.swift; sourceTree = "<group>"; };
-		F88EE4532AC4E253004F0431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F88EE4532AC4E253004F0431 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
 		F88EE4552AC4E256004F0431 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F88EE4582AC4E256004F0431 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F88EE45E2AC4E256004F0431 /* PanGalacticMealLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGalacticMealLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,9 +94,9 @@
 		F84EF66A2AC6209C00E200B9 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				F88EE4532AC4E253004F0431 /* ContentView.swift */,
-				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
 				F8C63A812AC84F72002551BB /* DailyLogView.swift */,
+				F88EE4532AC4E253004F0431 /* FoodListView.swift */,
+				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -307,7 +307,7 @@
 			files = (
 				F8C63A8A2ACBF378002551BB /* AppDelegate.swift in Sources */,
 				F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */,
-				F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */,
+				F88EE4542AC4E253004F0431 /* FoodListView.swift in Sources */,
 				F84EF6692AC6202900E200B9 /* Config.swift in Sources */,
 				F8C63A882ACBF1EE002551BB /* Food.xcdatamodeld in Sources */,
 				F8C63A8E2ACF5A80002551BB /* Store.swift in Sources */,

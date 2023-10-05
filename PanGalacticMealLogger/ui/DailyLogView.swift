@@ -28,7 +28,24 @@ struct DailyLogView: View {
             }
             .navigationTitle(Text(Date(), formatter: DateFormatter.dateOnly))
             .navigationDestination(isPresented: $showProductList) {
-                ContentView(productData: productData)
+                FoodListView(productData: productData, meal: selectedMeal) { product in
+                    switch selectedMeal {
+                    case "Frulle":
+                        breakfastItems.append(product.name)
+
+                    case "Lunch":
+                        lunchItems.append(product.name)
+
+                    case "Middag":
+                        dinnerItems.append(product.name)
+
+                    case "Snacks":
+                        snackItems.append(product.name)
+
+                    default:
+                        fatalError("Unknown meal \(selectedMeal)")
+                    }
+                }
             }
         }
         .onAppear() {
