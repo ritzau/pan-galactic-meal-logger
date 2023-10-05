@@ -64,12 +64,18 @@ struct DailyLogView: View {
             ForEach(items.wrappedValue, id: \.self) { item in
                 Text(item)
             }
+            .onDelete(perform: deleteItems)
+            
             Button("Lägg till") {
                 selectedMeal = title
                 showProductList = true
             }
         }
     }
+
+    private func deleteItems(at offsets: IndexSet) {
+         breakfastItems.remove(atOffsets: offsets)
+     }
 }
 
 extension DateFormatter {
