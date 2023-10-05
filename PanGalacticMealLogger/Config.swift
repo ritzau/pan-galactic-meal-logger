@@ -9,7 +9,5 @@ import Foundation
 
 let isPreview = ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
 
-// FIXME: Need to approve http, worth it? It probably makes sense to host it myself
 let dbUrl = URL(string: "http://www7.slv.se/apilivsmedel/LivsmedelService.svc/Livsmedel/Naringsvarde/20230613")
-
 let dbUrlLocal = Bundle.main.url(forResource: "livsmedel", withExtension: "xml")

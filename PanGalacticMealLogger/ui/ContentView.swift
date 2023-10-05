@@ -3,11 +3,11 @@ import SwiftUI
 
 struct ContentView: View {
 
-    @ObservedObject private var productData: ProductData
+    @ObservedObject private var productData: FoodStore
 
     @State private var searchText: String
 
-    init(productData: ProductData = ProductData(), searchText: String = "") {
+    init(productData: FoodStore = FoodStore(), searchText: String = "") {
         self.productData = productData
         self.searchText = searchText
     }
@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
             }
             .searchable(text: $searchText)
-            .navigationTitle("Products")
+            .navigationTitle("Mat")
         }
     }
 }

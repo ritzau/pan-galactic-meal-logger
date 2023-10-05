@@ -1,10 +1,13 @@
 import SwiftUI
+import UIKit
 
 @main
 struct PanGalacticMealLoggerApp: App {
+    @UIApplicationDelegateAdaptor(PanAppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            DailyLogView()
+            DailyLogView(appDelegate.persistentContainer.viewContext)
         }
     }
 }

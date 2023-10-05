@@ -5,9 +5,7 @@ struct ProductView: View {
 
     var body: some View {
         List {
-            Section(header: Text("Details").font(.headline)) {
-                row(title: "Barcode", value: product.barcode)
-                row(title: "Reference", value: String(format: "%.0f g", product.referenceGrams))
+            Section(header: Text(String(format: "Innehåll per %.0f g", product.referenceGrams)).font(.headline)) {
                 row(title: "Kalorier", value: String(format: "%.0f kcal", product.calories))
                 row(title: "Fett", value: String(format: "%.1f g", product.fats))
                 row(
@@ -16,19 +14,13 @@ struct ProductView: View {
                 row(title: "Kolhydrater", value: String(format: "%.1f g", product.carbs))
                 row(title: "        varav socker", value: String(format: "%.1f g", product.sugars))
                 row(title: "Fibrer", value: String(format: "%.1f g", product.fibres))
-                row(title: "Protein", value: String(format: "%.1f g", product.protein))
+                row(title: "Protein", value: String(format: "%.1f g", product.proteins))
                 row(title: "Salt", value: String(format: "%.1f g", product.salt))
+                row(title: "EAN", value: product.barcode)
             }
         }
         .listStyle(GroupedListStyle())
         .navigationTitle(product.name)
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button("Edit") {
-                    // Edit action here
-                }
-            }
-        }
     }
 
     private func row(title: String, value: String) -> some View {

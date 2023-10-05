@@ -1,4 +1,6 @@
+import CoreData
 import Foundation
+import UIKit
 
 struct Product {
     let barcode: String
@@ -7,7 +9,7 @@ struct Product {
     let calories: Float
     let fats: Float
     let saturatedFats: Float
-    let protein: Float
+    let proteins: Float
     let carbs: Float
     let sugars: Float
     let fibres: Float
@@ -22,7 +24,7 @@ let apple = Product(
     calories: 52,
     fats: 0.2,
     saturatedFats: 0.1,
-    protein: 0.3,
+    proteins: 0.3,
     carbs: 14,
     sugars: 10,
     fibres: 1,
@@ -34,7 +36,7 @@ let banana = Product(
     calories: 89,
     fats: 0.3,
     saturatedFats: 0,
-    protein: 1.1,
+    proteins: 1.1,
     carbs: 23,
     sugars: 17,
     fibres: 2,
@@ -46,189 +48,8 @@ let chickenBreast = Product(
     calories: 165,
     fats: 3.6,
     saturatedFats: 0.2,
-    protein: 31,
+    proteins: 31,
     carbs: 0,
     sugars: 0,
     fibres: 4.2,
     salt: 0)
-
-class ProductData: NSObject, XMLParserDelegate, ObservableObject {
-    @Published var products: [Product] = []
-    @Published var isLoading: Bool = false
-    @Published var progress: Double = 0.0
-
-    var tmpProducts: [Product] = []
-
-    let formatter = NumberFormatter()
-
-    var currentElement = ""
-    var currentNutrition = ""
-
-    // Temporary variables to hold data for each Product
-    var inProduct = false
-    var barcode = ""
-    var name = ""
-    var calories: Float = 0.0
-    var fats: Float = 0.0
-    var saturatedFats: Float = 0.0
-    var protein: Float = 0.0
-    var carbs: Float = 0.0
-    var sugars: Float = 0.0
-    var fibres: Float = 0.0
-    var salt: Float = 0.0
-
-    // Temps for nutrition
-    var inNutrition = false
-    var nutritionName = ""
-    var nutritionAbbreviation = ""
-    var nutritionValue: Float = 0.0
-    var nutritionUnit = ""
-
-    override init() {
-        super.init()
-
-        formatter.numberStyle = .decimal
-        formatter.locale = Locale(identifier: "sv_SE")
-    }
-
-    func parseAsync(_ url: URL) {
-        DispatchQueue.global(qos: DispatchQoS.QoSClass.userInteractive).async {
-            if let parser = XMLParser(contentsOf: url) {
-                parser.delegate = self
-                parser.parse()
-            } else {
-                print("Failed to create parser")
-            }
-        }
-    }
-
-    // MARK: - XMLParser Delegate Methods
-
-    func parser(
-        _ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?,
-        qualifiedName qName: String?, attributes attributeDict: [String: String] = [:]
-    ) {
-        currentElement = elementName
-
-        if elementName == "Livsmedel" {
-            // Reset temporary variables
-            inProduct = true
-            barcode = ""
-            name = ""
-            calories = 0.0
-            fats = 0.0
-            saturatedFats = 0.0
-            protein = 0.0
-            carbs = 0.0
-            sugars = 0.0
-            fibres = 0.0
-            salt = 0.0
-        } else if elementName == "Naringsvarde" {
-            inNutrition = true
-            nutritionName = ""
-            nutritionValue = 0.0
-            nutritionUnit = ""
-        }
-    }
-
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        let data = string.trimmingCharacters(in: .whitespacesAndNewlines)
-
-        if !data.isEmpty {
-            switch currentElement {
-            case "Namn":
-                if inNutrition {
-                    nutritionName = data
-                } else if inProduct {
-                    name = name + data
-                }
-            case "Forkortning":
-                nutritionAbbreviation = data
-            case "Varde":
-                if let number = formatter.number(from: data) {
-                    nutritionValue = number.floatValue
-                }
-            case "Enhet":
-                nutritionUnit = data
-            default:
-                break
-            }
-        }
-    }
-
-    func parser(
-        _ parser: XMLParser,
-        didEndElement elementName: String,
-        namespaceURI: String?,
-        qualifiedName qName: String?
-    ) {
-        switch elementName {
-        case "Naringsvarde":
-            switch nutritionAbbreviation {
-            case "Ener":
-                if nutritionUnit == "kcal" {
-                    calories = nutritionValue
-                }
-            case "Fett":
-                fats = nutritionValue
-            case "Mfet":
-                saturatedFats = nutritionValue
-            case "Prot":
-                protein = nutritionValue
-            case "Kolh":
-                carbs = nutritionValue
-            case "Mono/disack":
-                sugars = nutritionValue
-            case "Fibe":
-                fibres = nutritionValue
-            case "NaCl":
-                salt = nutritionValue
-            default:
-                break
-            }
-            inNutrition = false
-        case "Livsmedel":
-            inProduct = false
-
-            let product = Product(
-                barcode: barcode,
-                name: name,
-                calories: calories,
-                fats: fats,
-                saturatedFats: saturatedFats,
-                protein: protein,
-                carbs: carbs,
-                sugars: sugars,
-                fibres: fibres,
-                salt: salt
-            )
-
-            tmpProducts.append(product)
-
-            if tmpProducts.count > 100 {
-                DispatchQueue.main.async {
-                    self.isLoading = true
-                    self.products.append(contentsOf: self.tmpProducts)
-                    self.tmpProducts.removeAll(keepingCapacity: true)
-                    self.progress = Double(self.products.count)
-                }
-
-//                if isPreview {
-//                    parser.abortParsing()
-//                }
-            }
-
-        default:
-            break
-        }
-    }
-
-    func parserDidEndDocument(_ parser: XMLParser) {
-        DispatchQueue.main.async {
-            self.isLoading = false
-            self.progress = 1
-            self.products.append(contentsOf: self.tmpProducts)
-            self.tmpProducts.removeAll(keepingCapacity: false)
-        }
-    }
-}

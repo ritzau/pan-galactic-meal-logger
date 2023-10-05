@@ -19,6 +19,10 @@
 		F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47D2AC4E7AD004F0431 /* ProductView.swift */; };
 		F8B0F5762AC589A00053F4A2 /* livsmedel.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B0F5752AC589A00053F4A2 /* livsmedel.xml */; };
 		F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A812AC84F72002551BB /* DailyLogView.swift */; };
+		F8C63A882ACBF1EE002551BB /* Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A862ACBF1EE002551BB /* Food.xcdatamodeld */; };
+		F8C63A8A2ACBF378002551BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A892ACBF378002551BB /* AppDelegate.swift */; };
+		F8C63A8C2ACEAA43002551BB /* FoodXmlImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */; };
+		F8C63A8E2ACF5A80002551BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A8D2ACF5A80002551BB /* Store.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,12 @@
 		F88EE47D2AC4E7AD004F0431 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		F8B0F5752AC589A00053F4A2 /* livsmedel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livsmedel.xml; sourceTree = "<group>"; };
 		F8C63A812AC84F72002551BB /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
+		F8C63A842ACBF140002551BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		F8C63A872ACBF1EE002551BB /* Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Food.xcdatamodel; sourceTree = "<group>"; };
+		F8C63A892ACBF378002551BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodXmlImporter.swift; sourceTree = "<group>"; };
+		F8C63A8D2ACF5A80002551BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		F8C63A8F2ACF5D6D002551BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +108,7 @@
 				F88EE4612AC4E256004F0431 /* PanGalacticMealLoggerTests */,
 				F88EE46B2AC4E256004F0431 /* PanGalacticMealLoggerUITests */,
 				F88EE44F2AC4E253004F0431 /* Products */,
+				F8C63A832ACBF13F002551BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,13 +125,18 @@
 		F88EE4502AC4E253004F0431 /* PanGalacticMealLogger */ = {
 			isa = PBXGroup;
 			children = (
+				F8C63A8F2ACF5D6D002551BB /* Info.plist */,
 				F84EF66A2AC6209C00E200B9 /* ui */,
-				F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */,
 				F84EF6682AC6202900E200B9 /* Config.swift */,
+				F8C63A892ACBF378002551BB /* AppDelegate.swift */,
+				F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */,
+				F8C63A8D2ACF5A80002551BB /* Store.swift */,
 				F88EE47B2AC4E739004F0431 /* Product.swift */,
+				F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */,
 				F88EE4552AC4E256004F0431 /* Assets.xcassets */,
 				F8B0F5752AC589A00053F4A2 /* livsmedel.xml */,
 				F88EE4572AC4E256004F0431 /* Preview Content */,
+				F8C63A862ACBF1EE002551BB /* Food.xcdatamodeld */,
 			);
 			path = PanGalacticMealLogger;
 			sourceTree = "<group>";
@@ -148,6 +164,14 @@
 				F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */,
 			);
 			path = PanGalacticMealLoggerUITests;
+			sourceTree = "<group>";
+		};
+		F8C63A832ACBF13F002551BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F8C63A842ACBF140002551BB /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,10 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C63A8A2ACBF378002551BB /* AppDelegate.swift in Sources */,
 				F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */,
 				F88EE4542AC4E253004F0431 /* ContentView.swift in Sources */,
 				F84EF6692AC6202900E200B9 /* Config.swift in Sources */,
+				F8C63A882ACBF1EE002551BB /* Food.xcdatamodeld in Sources */,
+				F8C63A8E2ACF5A80002551BB /* Store.swift in Sources */,
 				F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */,
+				F8C63A8C2ACEAA43002551BB /* FoodXmlImporter.swift in Sources */,
 				F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */,
 				F88EE47C2AC4E739004F0431 /* Product.swift in Sources */,
 			);
@@ -454,6 +482,7 @@
 				DEVELOPMENT_TEAM = DLB59H2B97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PanGalacticMealLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -485,6 +514,7 @@
 				DEVELOPMENT_TEAM = DLB59H2B97;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PanGalacticMealLogger/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -507,7 +537,6 @@
 		F88EE4762AC4E256004F0431 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -527,7 +556,6 @@
 		F88EE4772AC4E256004F0431 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -620,6 +648,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F8C63A862ACBF1EE002551BB /* Food.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F8C63A872ACBF1EE002551BB /* Food.xcdatamodel */,
+			);
+			currentVersion = F8C63A872ACBF1EE002551BB /* Food.xcdatamodel */;
+			path = Food.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F88EE4462AC4E252004F0431 /* Project object */;
 }
