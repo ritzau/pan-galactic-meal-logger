@@ -1,7 +1,7 @@
 import Foundation
 
 class FoodXmlImporter: NSObject, XMLParserDelegate {
-    private let callback: (Product) -> Void
+    private let callback: (Product) async -> Void
 
     private let formatter = NumberFormatter()
 
@@ -28,7 +28,7 @@ class FoodXmlImporter: NSObject, XMLParserDelegate {
     private var nutritionValue: Float = 0.0
     private var nutritionUnit = ""
 
-    init(callback: @escaping (Product) -> Void) {
+    init(callback: @escaping (Product) async -> Void) {
         self.callback = callback
 
         formatter.numberStyle = .decimal
@@ -37,10 +37,12 @@ class FoodXmlImporter: NSObject, XMLParserDelegate {
 
     func parse(_ url: URL) {
         if let parser = XMLParser(contentsOf: url) {
+            log("Loading products")
             parser.delegate = self
             parser.parse()
+            log("Loading products done")
         } else {
-            print("Failed to create parser")
+            log("Failed to create parser")
         }
     }
 
@@ -145,7 +147,9 @@ class FoodXmlImporter: NSObject, XMLParserDelegate {
                 salt: salt
             )
 
-            callback(product)
+            Task {
+                await callback(product)
+            }
 
         default:
             break

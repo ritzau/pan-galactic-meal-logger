@@ -1,37 +1,69 @@
 import CoreData
 
-class FoodStore: NSObject, ObservableObject {
+class FoodStoreHolder: NSObject, ObservableObject {
+    let store : any FoodStore
+
+    init(store: any FoodStore) {
+        self.store = store
+    }
+}
+
+protocol FoodStore {
+    var products: [Product] { get }
+
+    var isLoading: Bool { get }
+
+    var progress: Double { get }
+
+    func load(from url: URL, force: Bool) async
+
+    func fetchProducts()
+
+    func saveProduct(_ product: Product)
+
+    func commit()
+
+    func purge()
+}
+
+class DefaultFoodStore: NSObject, ObservableObject, FoodStore {
     @Published var products: [Product] = []
     @Published var isLoading: Bool = false
     @Published var progress: Double = 0.0
 
     private var tmpProducts: [Product] = []
     private var uncomittedCount = 0
+    private var context: NSManagedObjectContext?
 
-    func load(_ context: NSManagedObjectContext?, from url: URL, force: Bool = false) {
-        let userDefaults = UserDefaults.standard
+    init(context: NSManagedObjectContext? = nil) {
+        self.context = context
+    }
 
-        if force || !userDefaults.bool(forKey: "didImportData") {
-            self.importFrom(url: url)
+    func load(from url: URL, force: Bool = false) async {
+        await logExecutionTime("Load products") {
+            let userDefaults = UserDefaults.standard
 
-            if let context = context {
-                self.storeProducts(to: context)
-            }
+            if force || !userDefaults.bool(forKey: "didImportData") {
+                await self.importFrom(url: url)
 
-            userDefaults.set(true, forKey: "didImportData")
-        } else {
-            if let context = context {
-                self.fetchProducts(context)
+                await self.storeProducts()
+
+                userDefaults.set(true, forKey: "didImportData")
             } else {
-                DispatchQueue.main.asyncAndWait {
-                    self.products = [apple, banana, chickenBreast]
+                if context != nil {
+                    self.fetchProducts()
+                } else {
+                    await MainActor.run {
+                        self.products = [apple, banana, chickenBreast]
+                    }
                 }
             }
         }
     }
 
-    private func importFrom(url: URL) {
-        DispatchQueue.main.async {
+    private func importFrom(url: URL) async {
+        await MainActor.run {
+            self.products.removeAll(keepingCapacity: true)
             self.isLoading = true
             self.progress = 0.0
         }
@@ -40,7 +72,7 @@ class FoodStore: NSObject, ObservableObject {
             self.tmpProducts.append(product)
 
             if self.tmpProducts.count > 100 {
-                DispatchQueue.main.async {
+                await MainActor.run {
                     self.products.append(contentsOf: self.tmpProducts)
                     self.tmpProducts.removeAll(keepingCapacity: true)
                     self.progress = Double(self.products.count)
@@ -50,7 +82,7 @@ class FoodStore: NSObject, ObservableObject {
 
         parser.parse(url)
 
-        DispatchQueue.main.async {
+        await MainActor.run {
             self.isLoading = false
             self.progress = Double(self.products.count)
             self.products.append(contentsOf: self.tmpProducts)
@@ -58,47 +90,57 @@ class FoodStore: NSObject, ObservableObject {
         }
     }
 
-    private func storeProducts(to context: NSManagedObjectContext) {
-        self.purge(context)
+    private func storeProducts() async {
+        self.purge()
 
-        DispatchQueue.main.asyncAndWait {
+        await MainActor.run {
             for product in self.products {
-                self.saveProduct(context, product)
+                self.saveProduct(product)
             }
         }
 
-        self.commit(context)
+        self.commit()
     }
 
     // MARK: - CoreData
 
-    func fetchProducts(_ context: NSManagedObjectContext) {
-        print("fetching")
+    func fetchProducts() {
+        log("fetching")
+        guard let context = context else {
+            log("No context no persistence")
+            return
+        }
+
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Food")
 
         do {
             if let results = try context.fetch(request) as? [FoodEntity] {
-                print("count \(results.count)")
+                log("count \(results.count)")
                 let loaded = results.map { entity in
                     Product(barcode: "", name: entity.name ?? "foo", calories: entity.calories,
                             fats: entity.fats, saturatedFats: entity.saturatedFats,
                             proteins: entity.proteins, carbs: entity.carbs,
                             sugars: entity.sugars, fibres: entity.fibres, salt: entity.salt)
                 }
-                print("transformed")
+                log("transformed")
                 DispatchQueue.main.async {
                     self.products = loaded
-                    print("done")
+                    log("done")
                 }
             } else {
-                print("Failed to lead")
+                log("Failed to lead")
             }
         } catch {
-            print("Failed to fetch products: \(error)")
+            log("Failed to fetch products: \(error)")
         }
     }
 
-    func saveProduct(_ context: NSManagedObjectContext, _ product: Product) {
+    func saveProduct(_ product: Product) {
+        guard let context = context else {
+            log("No context no persistence")
+            return
+        }
+
         let newProduct = FoodEntity(context: context)
         newProduct.name = product.name
         newProduct.calories = product.calories
@@ -109,28 +151,38 @@ class FoodStore: NSObject, ObservableObject {
         newProduct.sugars = product.sugars
         newProduct.fibres = product.fibres
         newProduct.salt = product.salt
-        
+
         uncomittedCount += 1
         if uncomittedCount > 500 {
-            print("Commit")
-            commit(context)
+            log("Commit")
+            commit()
             uncomittedCount = 0
         }
     }
 
-    func commit(_ context: NSManagedObjectContext) {
+    func commit() {
+        guard let context = context else {
+            log("No context no persistence")
+            return
+        }
+
         do {
-            print("try save")
+            log("try save")
             try context.save()
         } catch {
-            print("Failed saving")
+            log("Failed saving")
         }
-        print("reset")
+        log("reset")
         context.reset()
     }
 
-    func purge(_ context: NSManagedObjectContext) {
-        print("purge")
+    func purge() {
+        log("purge")
+        guard let context = context else {
+            log("No context no persistence")
+            return
+        }
+
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FoodEntity.fetchRequest()
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
@@ -138,10 +190,35 @@ class FoodStore: NSObject, ObservableObject {
             try context.execute(batchDeleteRequest)
             try context.save()
         } catch {
-            print("Batch delete failed: \(error)")
+            log("Batch delete failed: \(error)")
         }
 
-        print("reset")
+        log("reset")
         context.reset()
+    }
+}
+
+class SampleFoodStore: NSObject, ObservableObject, FoodStore {
+    var products: [Product] = [apple, banana, chickenBreast]
+
+    var isLoading: Bool = false
+
+    var progress: Double = 0.0
+
+    func load(from url: URL, force: Bool) async {
+    }
+
+    func fetchProducts() {
+    }
+
+    func saveProduct(_ product: Product) {
+        products.append(product)
+    }
+
+    func commit() {
+    }
+
+    func purge() {
+        products = []
     }
 }

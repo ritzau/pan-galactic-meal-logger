@@ -2,21 +2,19 @@ import CoreData
 import SwiftUI
 
 struct DailyLogView: View {
-    @StateObject private var productData = FoodStore()
+    @EnvironmentObject var foodStoreHolder: FoodStoreHolder
 
-    @State private var breakfastItems: [String] = []
-    @State private var lunchItems: [String] = []
-    @State private var dinnerItems: [String] = []
-    @State private var snackItems: [String] = []
+    private var productData: any FoodStore {
+        get { foodStoreHolder.store }
+    }
+
+    @State private var breakfastItems: [FoodItem] = []
+    @State private var lunchItems: [FoodItem] = []
+    @State private var dinnerItems: [FoodItem] = []
+    @State private var snackItems: [FoodItem] = []
 
     @State private var showProductList = false
     @State private var selectedMeal: String = ""
-
-    private let context: NSManagedObjectContext?
-
-    init(_ context: NSManagedObjectContext?) {
-        self.context = context
-    }
 
     var body: some View {
         NavigationStack {
@@ -28,44 +26,53 @@ struct DailyLogView: View {
             }
             .navigationTitle(Text(Date(), formatter: DateFormatter.dateOnly))
             .navigationDestination(isPresented: $showProductList) {
-                FoodListView(productData: productData, meal: selectedMeal) { product in
-                    switch selectedMeal {
-                    case "Frulle":
-                        breakfastItems.append(product.name)
+                FoodListView(
+                    meal: selectedMeal,
+                    addToMeal: { product, weight in
+                        let item = FoodItem(food: product, weightGrams: weight)
 
-                    case "Lunch":
-                        lunchItems.append(product.name)
+                        switch selectedMeal {
+                        case "Frulle":
+                            breakfastItems.append(item)
 
-                    case "Middag":
-                        dinnerItems.append(product.name)
+                        case "Lunch":
+                            lunchItems.append(item)
 
-                    case "Snacks":
-                        snackItems.append(product.name)
+                        case "Middag":
+                            dinnerItems.append(item)
 
-                    default:
-                        fatalError("Unknown meal \(selectedMeal)")
-                    }
-                }
+                        case "Snacks":
+                            snackItems.append(item)
+
+                        default:
+                            fatalError("Unknown meal \(selectedMeal)")
+                        }
+                    },
+                    forceImport: {
+                        Task {
+                            await productData.load(from: dbUrlLocal!, force: true)
+                        }
+                    })
             }
         }
         .onAppear() {
             if let url = dbUrlLocal {
-                DispatchQueue.global().async {
-                    productData.load(context, from: url, force: false)
+                Task {
+                    await productData.load(from: url, force: false)
                 }
             } else {
-                print("Cannot locate DB file")
+                log("Cannot locate DB file")
             }
         }
     }
 
-    private func foodSection(title: String, items: Binding<[String]>) -> some View {
+    private func foodSection(title: String, items: Binding<[FoodItem]>) -> some View {
         Section(header: Text(title).font(.headline)) {
-            ForEach(items.wrappedValue, id: \.self) { item in
-                Text(item)
+            ForEach(items) { item in
+                foodItemRow(item: item.wrappedValue)
             }
             .onDelete(perform: deleteItems)
-            
+
             Button("Lägg till") {
                 selectedMeal = title
                 showProductList = true
@@ -73,9 +80,26 @@ struct DailyLogView: View {
         }
     }
 
+    private func foodItemRow(item: FoodItem) -> some View {
+        let factor = item.weightGrams / item.food.referenceGrams
+        let food = item.food
+
+        return HStack {
+            Text(String(format: "%.0fg %@", item.weightGrams, food.name))
+            Spacer()
+            Text(String(format: "%.0f/%.0f/%.0f/%.0f",
+                        factor * food.fats,
+                        factor * food.carbs,
+                        factor * food.proteins,
+                        factor * food.calories))
+            .foregroundColor(.gray)
+        }
+    }
+
+
     private func deleteItems(at offsets: IndexSet) {
-         breakfastItems.remove(atOffsets: offsets)
-     }
+        breakfastItems.remove(atOffsets: offsets)
+    }
 }
 
 extension DateFormatter {
@@ -87,6 +111,16 @@ extension DateFormatter {
     }()
 }
 
+struct FoodItem: Identifiable {
+    let id = UUID()
+
+    var food: Product
+    var weightGrams: Float
+}
+
 #Preview {
-    DailyLogView(nil)
+    NavigationStack {
+        DailyLogView()
+            .environmentObject(FoodStoreHolder(store: SampleFoodStore()))
+    }
 }

@@ -2,19 +2,38 @@ import CoreData
 import Foundation
 import UIKit
 
-struct Product {
-    let barcode: String
-    let name: String
-    let referenceGrams: Float = 100.0
-    let calories: Float
-    let fats: Float
-    let saturatedFats: Float
-    let proteins: Float
-    let carbs: Float
-    let sugars: Float
-    let fibres: Float
-    let salt: Float
+struct Product: Equatable, Identifiable {
+    var id = UUID()
+
+    var barcode: String
+    var name: String
+    var referenceGrams: Float = 100.0
+    var calories: Float
+    var fats: Float
+    var saturatedFats: Float
+    var proteins: Float
+    var carbs: Float
+    var sugars: Float
+    var fibres: Float
+    var salt: Float
+
+    static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.id == rhs.id
+    }
 }
+
+enum FoodUnit: String {
+    case gram = "g"
+}
+
+struct MealItem: Identifiable {
+    var amount: Float
+    var unit: FoodUnit
+    var food: Product
+
+    var id = UUID()
+}
+
 
 // Sample products
 

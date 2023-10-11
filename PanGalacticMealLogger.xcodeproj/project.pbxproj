@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F84EF6692AC6202900E200B9 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84EF6682AC6202900E200B9 /* Config.swift */; };
+		F879013F2AD4AC5A003C59A4 /* MealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F879013E2AD4AC5A003C59A4 /* MealDetailsView.swift */; };
+		F87901412AD4FC22003C59A4 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87901402AD4FC22003C59A4 /* Log.swift */; };
 		F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */; };
 		F88EE4542AC4E253004F0431 /* FoodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4532AC4E253004F0431 /* FoodListView.swift */; };
 		F88EE4562AC4E256004F0431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F88EE4552AC4E256004F0431 /* Assets.xcassets */; };
@@ -15,12 +17,11 @@
 		F88EE4632AC4E256004F0431 /* PanGalacticMealLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE4622AC4E256004F0431 /* PanGalacticMealLoggerTests.swift */; };
 		F88EE46D2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE46C2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift */; };
 		F88EE46F2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */; };
-		F88EE47C2AC4E739004F0431 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47B2AC4E739004F0431 /* Product.swift */; };
+		F88EE47C2AC4E739004F0431 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47B2AC4E739004F0431 /* Model.swift */; };
 		F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88EE47D2AC4E7AD004F0431 /* ProductView.swift */; };
 		F8B0F5762AC589A00053F4A2 /* livsmedel.xml in Resources */ = {isa = PBXBuildFile; fileRef = F8B0F5752AC589A00053F4A2 /* livsmedel.xml */; };
 		F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A812AC84F72002551BB /* DailyLogView.swift */; };
 		F8C63A882ACBF1EE002551BB /* Food.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A862ACBF1EE002551BB /* Food.xcdatamodeld */; };
-		F8C63A8A2ACBF378002551BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A892ACBF378002551BB /* AppDelegate.swift */; };
 		F8C63A8C2ACEAA43002551BB /* FoodXmlImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */; };
 		F8C63A8E2ACF5A80002551BB /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C63A8D2ACF5A80002551BB /* Store.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		F84EF6682AC6202900E200B9 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		F879013E2AD4AC5A003C59A4 /* MealDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailsView.swift; sourceTree = "<group>"; };
+		F87901402AD4FC22003C59A4 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		F88EE44E2AC4E253004F0431 /* PanGalacticMealLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PanGalacticMealLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerApp.swift; sourceTree = "<group>"; };
 		F88EE4532AC4E253004F0431 /* FoodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodListView.swift; sourceTree = "<group>"; };
@@ -54,13 +57,12 @@
 		F88EE4682AC4E256004F0431 /* PanGalacticMealLoggerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PanGalacticMealLoggerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F88EE46C2AC4E256004F0431 /* PanGalacticMealLoggerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerUITests.swift; sourceTree = "<group>"; };
 		F88EE46E2AC4E256004F0431 /* PanGalacticMealLoggerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanGalacticMealLoggerUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		F88EE47B2AC4E739004F0431 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		F88EE47B2AC4E739004F0431 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F88EE47D2AC4E7AD004F0431 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		F8B0F5752AC589A00053F4A2 /* livsmedel.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = livsmedel.xml; sourceTree = "<group>"; };
 		F8C63A812AC84F72002551BB /* DailyLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogView.swift; sourceTree = "<group>"; };
 		F8C63A842ACBF140002551BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		F8C63A872ACBF1EE002551BB /* Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Food.xcdatamodel; sourceTree = "<group>"; };
-		F8C63A892ACBF378002551BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodXmlImporter.swift; sourceTree = "<group>"; };
 		F8C63A8D2ACF5A80002551BB /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		F8C63A8F2ACF5D6D002551BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				F8C63A812AC84F72002551BB /* DailyLogView.swift */,
 				F88EE4532AC4E253004F0431 /* FoodListView.swift */,
 				F88EE47D2AC4E7AD004F0431 /* ProductView.swift */,
+				F879013E2AD4AC5A003C59A4 /* MealDetailsView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -128,10 +131,10 @@
 				F8C63A8F2ACF5D6D002551BB /* Info.plist */,
 				F84EF66A2AC6209C00E200B9 /* ui */,
 				F84EF6682AC6202900E200B9 /* Config.swift */,
-				F8C63A892ACBF378002551BB /* AppDelegate.swift */,
+				F87901402AD4FC22003C59A4 /* Log.swift */,
 				F88EE4512AC4E253004F0431 /* PanGalacticMealLoggerApp.swift */,
 				F8C63A8D2ACF5A80002551BB /* Store.swift */,
-				F88EE47B2AC4E739004F0431 /* Product.swift */,
+				F88EE47B2AC4E739004F0431 /* Model.swift */,
 				F8C63A8B2ACEAA43002551BB /* FoodXmlImporter.swift */,
 				F88EE4552AC4E256004F0431 /* Assets.xcassets */,
 				F8B0F5752AC589A00053F4A2 /* livsmedel.xml */,
@@ -305,16 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8C63A8A2ACBF378002551BB /* AppDelegate.swift in Sources */,
 				F88EE47E2AC4E7AD004F0431 /* ProductView.swift in Sources */,
 				F88EE4542AC4E253004F0431 /* FoodListView.swift in Sources */,
+				F87901412AD4FC22003C59A4 /* Log.swift in Sources */,
 				F84EF6692AC6202900E200B9 /* Config.swift in Sources */,
 				F8C63A882ACBF1EE002551BB /* Food.xcdatamodeld in Sources */,
 				F8C63A8E2ACF5A80002551BB /* Store.swift in Sources */,
+				F879013F2AD4AC5A003C59A4 /* MealDetailsView.swift in Sources */,
 				F8C63A822AC84F72002551BB /* DailyLogView.swift in Sources */,
 				F8C63A8C2ACEAA43002551BB /* FoodXmlImporter.swift in Sources */,
 				F88EE4522AC4E253004F0431 /* PanGalacticMealLoggerApp.swift in Sources */,
-				F88EE47C2AC4E739004F0431 /* Product.swift in Sources */,
+				F88EE47C2AC4E739004F0431 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
