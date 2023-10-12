@@ -17,8 +17,50 @@ struct MealDetailsView: View {
         get { foodStoreHolder.store }
     }
 
+    private var carbsGrams: Float {
+        get {
+            foods
+                .map { $0.food.carbs * $0.amount / $0.food.referenceGrams }
+                .reduce(0) { $0 + $1 }
+        }
+    }
+
+    private var proteinGrams: Float {
+        get {
+            foods
+                .map { $0.food.proteins * $0.amount / $0.food.referenceGrams }
+                .reduce(0) { $0 + $1 }
+        }
+    }
+
+    private var fatGrams: Float {
+        get {
+            foods
+                .map { $0.food.fats * $0.amount / $0.food.referenceGrams }
+                .reduce(0) { $0 + $1 }
+        }
+    }
+
+    private var fibresGrams: Float {
+        get {
+            foods
+                .map { $0.food.fibres * $0.amount / $0.food.referenceGrams }
+                .reduce(0) { $0 + $1 }
+        }
+    }
+
+    private var kiloCalories: Float {
+        get {
+            foods
+                .map { $0.food.calories * $0.amount / $0.food.referenceGrams }
+                .reduce(0) { $0 + $1 }
+        }
+    }
+
     var body: some View {
         VStack {
+            Text(String(format: "C%.0f/P%.0f/F%.0f/f%.0f/%.0f kcal",
+                        carbsGrams, proteinGrams, fatGrams, fibresGrams, kiloCalories))
             List {
                 if searchPresented {
                     ForEach(searchResults, id: \.id) { result in
